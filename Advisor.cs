@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace ProjectA
 {
@@ -31,28 +33,55 @@ namespace ProjectA
                 return l;
             }
         }
+      
         private void cmdSave_Click(object sender, EventArgs e)
         {
+           // String cm = "select Max(AdvisorId)as maxID from Advisor";
+           // int accounts = 0;
+
+            // cmd.CommandText = "select Max(AccountID)as maxID from Account";
+            // cmd.CommandType = CommandType.Text;
+
+            //connection.Open();
+           // var reader = DatabaseConnection.getInstance().getData(cm);
+           // int row = DatabaseConnection.getInstance().exectuteQuery(cm);
+           // OleDbDataReader reader = command.ExecuteReader();
+
+            //if (reader.Read())
+            //{
+            //    accounts = Convert.ToInt32(reader["maxID"]) + 1;
+            //}
+
+           // return accounts;
+
+            // return accounts;
+
+
+
+
             try
             {
                 int desg=0;
-                if(comboBox1.Text=="Chair Person")
+                if(comboBox1.Text== "Professor")
                 {
-                    desg = 1;
+                    desg = 6;
                 }
-                else if(comboBox1.Text=="Professor")
+                else if(comboBox1.Text== "Associate Professor")
                 {
-                    desg = 2;
+                    desg = 7;
                 }
-                else if(comboBox1.Text== "Assistant Professor")
+                else if(comboBox1.Text== "Assisstant Professor")
                 {
-                    desg = 3;
+                    desg = 8;
                 }
-                else if(comboBox1.Text=="Lecturar")
+                else if(comboBox1.Text== "Lecturer")
                 {
-                    desg = 4;
+                    desg = 9;
                 }
-
+                else if (comboBox1.Text == "Industry Professional")
+                {
+                    desg = 10;
+                }
                 decimal slry = Convert.ToDecimal(txtSalary.Text);
                 int id = Convert.ToInt32( txtID.Text);
                 String cmd = String.Format("INSERT INTO Advisor(Id,Designation,Salary) values('{0}','{1}','{2}')",id ,desg,slry);

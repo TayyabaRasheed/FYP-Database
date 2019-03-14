@@ -40,18 +40,33 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.rdMale = new System.Windows.Forms.RadioButton();
-            this.rdFemale = new System.Windows.Forms.RadioButton();
+            this.rdmale = new System.Windows.Forms.RadioButton();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.addStudentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.seToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchStudentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editStudentDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addInstructorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.evaluateGroupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupWiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.individualEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.evaluateIndividualsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rdfml = new System.Windows.Forms.RadioButton();
+            this.txtReg = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmdSave
             // 
-            this.cmdSave.Location = new System.Drawing.Point(193, 296);
+            this.cmdSave.Location = new System.Drawing.Point(193, 318);
             this.cmdSave.Name = "cmdSave";
             this.cmdSave.Size = new System.Drawing.Size(138, 29);
             this.cmdSave.TabIndex = 0;
             this.cmdSave.Text = "Save";
             this.cmdSave.UseVisualStyleBackColor = true;
+            this.cmdSave.Click += new System.EventHandler(this.cmdSave_Click);
             // 
             // txtFirstName
             // 
@@ -136,41 +151,146 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(65, 222);
+            this.label6.Location = new System.Drawing.Point(67, 257);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "Gender";
             // 
-            // rdMale
+            // rdmale
             // 
-            this.rdMale.AutoSize = true;
-            this.rdMale.Location = new System.Drawing.Point(193, 220);
-            this.rdMale.Name = "rdMale";
-            this.rdMale.Size = new System.Drawing.Size(48, 17);
-            this.rdMale.TabIndex = 12;
-            this.rdMale.TabStop = true;
-            this.rdMale.Text = "Male";
-            this.rdMale.UseVisualStyleBackColor = true;
+            this.rdmale.AutoSize = true;
+            this.rdmale.Location = new System.Drawing.Point(195, 257);
+            this.rdmale.Name = "rdmale";
+            this.rdmale.Size = new System.Drawing.Size(48, 17);
+            this.rdmale.TabIndex = 13;
+            this.rdmale.TabStop = true;
+            this.rdmale.Text = "Male";
+            this.rdmale.UseVisualStyleBackColor = true;
             // 
-            // rdFemale
+            // menuStrip1
             // 
-            this.rdFemale.AutoSize = true;
-            this.rdFemale.Location = new System.Drawing.Point(193, 243);
-            this.rdFemale.Name = "rdFemale";
-            this.rdFemale.Size = new System.Drawing.Size(59, 17);
-            this.rdFemale.TabIndex = 13;
-            this.rdFemale.TabStop = true;
-            this.rdFemale.Text = "Female";
-            this.rdFemale.UseVisualStyleBackColor = true;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeToolStripMenuItem1,
+            this.addStudentToolStripMenuItem1,
+            this.addInstructorToolStripMenuItem1,
+            this.evaluateGroupsToolStripMenuItem,
+            this.evaluateIndividualsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(575, 24);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // homeToolStripMenuItem1
+            // 
+            this.homeToolStripMenuItem1.Name = "homeToolStripMenuItem1";
+            this.homeToolStripMenuItem1.Size = new System.Drawing.Size(52, 20);
+            this.homeToolStripMenuItem1.Text = "Home";
+            this.homeToolStripMenuItem1.Click += new System.EventHandler(this.homeToolStripMenuItem1_Click);
+            // 
+            // addStudentToolStripMenuItem1
+            // 
+            this.addStudentToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seToolStripMenuItem,
+            this.searchStudentsToolStripMenuItem,
+            this.editStudentDataToolStripMenuItem});
+            this.addStudentToolStripMenuItem1.Name = "addStudentToolStripMenuItem1";
+            this.addStudentToolStripMenuItem1.Size = new System.Drawing.Size(63, 20);
+            this.addStudentToolStripMenuItem1.Text = "Student ";
+            // 
+            // seToolStripMenuItem
+            // 
+            this.seToolStripMenuItem.Name = "seToolStripMenuItem";
+            this.seToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.seToolStripMenuItem.Text = "Add Students";
+            this.seToolStripMenuItem.Click += new System.EventHandler(this.seToolStripMenuItem_Click);
+            // 
+            // searchStudentsToolStripMenuItem
+            // 
+            this.searchStudentsToolStripMenuItem.Name = "searchStudentsToolStripMenuItem";
+            this.searchStudentsToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.searchStudentsToolStripMenuItem.Text = "Student\'s Record";
+            this.searchStudentsToolStripMenuItem.Click += new System.EventHandler(this.searchStudentsToolStripMenuItem_Click);
+            // 
+            // editStudentDataToolStripMenuItem
+            // 
+            this.editStudentDataToolStripMenuItem.Name = "editStudentDataToolStripMenuItem";
+            this.editStudentDataToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.editStudentDataToolStripMenuItem.Text = "UpdateDelete Student Data";
+            this.editStudentDataToolStripMenuItem.Click += new System.EventHandler(this.editStudentDataToolStripMenuItem_Click);
+            // 
+            // addInstructorToolStripMenuItem1
+            // 
+            this.addInstructorToolStripMenuItem1.Name = "addInstructorToolStripMenuItem1";
+            this.addInstructorToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
+            this.addInstructorToolStripMenuItem1.Text = "Instructor";
+            this.addInstructorToolStripMenuItem1.Click += new System.EventHandler(this.addInstructorToolStripMenuItem1_Click);
+            // 
+            // evaluateGroupsToolStripMenuItem
+            // 
+            this.evaluateGroupsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.groupWiseToolStripMenuItem,
+            this.individualEvaluationToolStripMenuItem});
+            this.evaluateGroupsToolStripMenuItem.Name = "evaluateGroupsToolStripMenuItem";
+            this.evaluateGroupsToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.evaluateGroupsToolStripMenuItem.Text = "Evaluation";
+            // 
+            // groupWiseToolStripMenuItem
+            // 
+            this.groupWiseToolStripMenuItem.Name = "groupWiseToolStripMenuItem";
+            this.groupWiseToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.groupWiseToolStripMenuItem.Text = "Group wise ";
+            // 
+            // individualEvaluationToolStripMenuItem
+            // 
+            this.individualEvaluationToolStripMenuItem.Name = "individualEvaluationToolStripMenuItem";
+            this.individualEvaluationToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.individualEvaluationToolStripMenuItem.Text = "Individual Evaluation";
+            // 
+            // evaluateIndividualsToolStripMenuItem
+            // 
+            this.evaluateIndividualsToolStripMenuItem.Name = "evaluateIndividualsToolStripMenuItem";
+            this.evaluateIndividualsToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
+            this.evaluateIndividualsToolStripMenuItem.Text = "Evaluate Individuals";
+            // 
+            // rdfml
+            // 
+            this.rdfml.AutoSize = true;
+            this.rdfml.Location = new System.Drawing.Point(195, 280);
+            this.rdfml.Name = "rdfml";
+            this.rdfml.Size = new System.Drawing.Size(59, 17);
+            this.rdfml.TabIndex = 15;
+            this.rdfml.TabStop = true;
+            this.rdfml.Text = "Female";
+            this.rdfml.UseVisualStyleBackColor = true;
+            // 
+            // txtReg
+            // 
+            this.txtReg.Location = new System.Drawing.Point(193, 220);
+            this.txtReg.Name = "txtReg";
+            this.txtReg.Size = new System.Drawing.Size(200, 20);
+            this.txtReg.TabIndex = 16;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(65, 220);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "RegistrationNo";
             // 
             // Person
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 359);
-            this.Controls.Add(this.rdFemale);
-            this.Controls.Add(this.rdMale);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtReg);
+            this.Controls.Add(this.rdfml);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.rdmale);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dtpDOB);
             this.Controls.Add(this.txtEmail);
@@ -185,6 +305,9 @@
             this.Controls.Add(this.cmdSave);
             this.Name = "Person";
             this.Text = "Person";
+            this.Load += new System.EventHandler(this.Person_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,8 +327,21 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.DateTimePicker dtpDOB;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton rdMale;
-        private System.Windows.Forms.RadioButton rdFemale;
+        private System.Windows.Forms.RadioButton rdmale;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem addStudentToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem seToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchStudentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editStudentDataToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addInstructorToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem evaluateGroupsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem groupWiseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem individualEvaluationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem evaluateIndividualsToolStripMenuItem;
+        private System.Windows.Forms.RadioButton rdfml;
+        private System.Windows.Forms.TextBox txtReg;
+        private System.Windows.Forms.Label label7;
     }
 }
 

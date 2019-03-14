@@ -53,5 +53,19 @@ namespace ProjectA
             l.Show();
             this.Hide();
         }
+
+        private void addInstructorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Advisor l = Advisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void editStudentDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateDeleteStudent l = UpdateDeleteStudent.getInstance();
+            l.Show();
+            this.Hide();
+        }
     }
 }
