@@ -104,7 +104,7 @@ namespace ProjectA
                 SqlCommand cmd = new SqlCommand("Delete Person where Id=@ID ", con);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@ID", this.stdID);
-
+                cmd.ExecuteNonQuery();
                 SqlCommand cd = new SqlCommand("Delete Student where Id=@ID ", con);
                 cd.CommandType = CommandType.Text;
                 cd.Parameters.AddWithValue("@ID", this.stdID);
@@ -235,6 +235,34 @@ namespace ProjectA
         private void assignGroupProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GroupProject l = GroupProject.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void updateDeleteAdvisorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateDeleteAdvisor l = UpdateDeleteAdvisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void updateDeleteEvaluationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateDeleteEvaluation l = UpdateDeleteEvaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void updateDeleteProjectDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateDeleteProject l = UpdateDeleteProject.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void deleteGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteGroup l = DeleteGroup.getInstance();
             l.Show();
             this.Hide();
         }

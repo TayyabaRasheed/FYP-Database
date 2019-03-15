@@ -11,21 +11,20 @@ using System.Windows.Forms;
 
 namespace ProjectA
 {
-    public partial class UpdateDeleteAdvisor : Form
+    public partial class UpdateDeleteEvaluation : Form
     {
-        private static UpdateDeleteAdvisor l = null;
-        public UpdateDeleteAdvisor()
+        private static UpdateDeleteEvaluation l = null;
+        public UpdateDeleteEvaluation()
         {
             InitializeComponent();
         }
 
         SqlConnection con = new SqlConnection("Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora");
-
-        public static UpdateDeleteAdvisor getInstance()
+        public static UpdateDeleteEvaluation getInstance()
         {
             if (l == null)
             {
-                l = new UpdateDeleteAdvisor();
+                l = new UpdateDeleteEvaluation();
                 l.Show();
                 return l;
             }
@@ -34,18 +33,31 @@ namespace ProjectA
                 return l;
             }
         }
-        private void UpdateDeleteAdvisor_Load(object sender, EventArgs e)
+        private void UpdateDeleteEvaluation_Load(object sender, EventArgs e)
         {
-            GetAdvisorRecord();
+            GetEvaluationRecord();
         }
+        private void GetEvaluationRecord()
+        {
+            SqlCommand cmd = new SqlCommand("Select * from Evaluation", con);
 
+            DataTable dt = new DataTable();
+            con.Open();
+
+            SqlDataReader rd = cmd.ExecuteReader();
+            dt.Load(rd);
+            con.Close();
+
+            gdEvaluation.DataSource = dt;
+        }
+        public int stdID { get; set; }
         private void seToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Person l = Person.getInstance();
             l.Show();
             this.Hide();
         }
-        public int stdID { get; set; }
+
         private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             HomePage l = HomePage.getInstance();
@@ -83,7 +95,9 @@ namespace ProjectA
 
         private void updateDeleteAdvisorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Show();
+            UpdateDeleteAdvisor l = UpdateDeleteAdvisor.getInstance();
+            l.Show();
+            this.Hide();
         }
 
         private void groupWiseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -98,6 +112,11 @@ namespace ProjectA
             GroupEvaluation l = GroupEvaluation.getInstance();
             l.Show();
             this.Hide();
+        }
+
+        private void updateDeleteEvaluationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Show();
         }
 
         private void groupStudentsToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -120,133 +139,72 @@ namespace ProjectA
             l.Show();
             this.Hide();
         }
-        private void GetAdvisorRecord()
+
+        private void gdEvaluation_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("Select * from Advisor", con);
-
-            DataTable dt = new DataTable();
-            con.Open();
-
-            SqlDataReader rd = cmd.ExecuteReader();
-            dt.Load(rd);
-            con.Close();
-
-            gdAdvisorRecord.DataSource = dt;
+            stdID = Convert.ToInt32(gdEvaluation.SelectedRows[0].Cells[0].Value);
+            txtName.Text = gdEvaluation.SelectedRows[0].Cells[1].Value.ToString();
+            txtTotalMarks.Text = gdEvaluation.SelectedRows[0].Cells[2].Value.ToString();
+            txtMarksWeightage.Text = gdEvaluation.SelectedRows[0].Cells[3].Value.ToString();
         }
 
-        private void cmdSave_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             con.Open();
             if (stdID > 0)
             {
-                SqlCommand cmd = new SqlCommand("Update Advisor SET @Id=Id,Designation= @Designation,Salary=@Salary where Id=@ID ", con);
+                SqlCommand cmd = new SqlCommand("Update Evaluation SET @Id=Id,Name= @Name,TotalMarks=@TotalMarks,@TotalWeightage=TotalWeightage where Id=@ID ", con);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", this.stdID);
-                cmd.Parameters.AddWithValue("@Salary", Convert.ToDecimal(txtSalary.Text));
-                
-                
+                cmd.Parameters.AddWithValue("@Name", txtName.Text);
+                cmd.Parameters.AddWithValue("@TotalMarks", txtTotalMarks.Text);
+                cmd.Parameters.AddWithValue("@TotalWeightage", txtMarksWeightage.Text);               
 
-                int desg = 0;
-                if (comboBox1.Text == "Professor")
-                {
-                    desg = 6;
-                }
-                else if (comboBox1.Text == "Associate Professor")
-                {
-                    desg = 7;
-                }
-                else if (comboBox1.Text == "Assisstant Professor")
-                {
-                    desg = 8;
-                }
-                else if (comboBox1.Text == "Lecturer")
-                {
-                    desg = 9;
-                }
-                else if (comboBox1.Text == "Industry Professional")
-                {
-                    desg = 10;
-                }
-                cmd.Parameters.AddWithValue("@Designation", Convert.ToInt32(desg));
-               
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Record Updated Successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                GetAdvisorRecord();
+                GetEvaluationRecord();
                 ClearTextBoxs();
             }
             else
             {
-                MessageBox.Show("Select a Advisor for updation", "Update", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Select Evaluation for updation", "Update", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void ClearTextBoxs()
         {
             stdID = 0;
-            comboBox1.Text="";
-            txtSalary.Clear();
+            txtName.Clear();
+            txtTotalMarks.Clear();
+            txtMarksWeightage.Clear();
             
         }
 
-        private void gdAdvisorRecord_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            stdID = Convert.ToInt32(gdAdvisorRecord.SelectedRows[0].Cells[0].Value);
-            if(Convert.ToInt32(gdAdvisorRecord.SelectedRows[0].Cells[1].Value)==(06))
-            {
-                comboBox1.Text = "Professor";
-            }
-           else if (Convert.ToInt32(gdAdvisorRecord.SelectedRows[0].Cells[1].Value) == (07))
-            {
-                comboBox1.Text = "Associate Professor";
-            }
-            else if (Convert.ToInt32(gdAdvisorRecord.SelectedRows[0].Cells[1].Value) == (08))
-            {
-                comboBox1.Text = "Assisstant Professor";
-            }
-            else if (Convert.ToInt32(gdAdvisorRecord.SelectedRows[0].Cells[1].Value) == (9))
-            {
-                comboBox1.Text = "Lecturer";
-            }
-            else if (Convert.ToInt32(gdAdvisorRecord.SelectedRows[0].Cells[1].Value) == (10))
-            {
-                comboBox1.Text = "Industry Professional";
-            }
-            txtSalary.Text = gdAdvisorRecord.SelectedRows[0].Cells[2].Value.ToString();
-           
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             if (stdID > 0)
             {
                 con.Open();
-                SqlCommand cd = new SqlCommand("Delete ProjectAdvisor where AdvisorId=@ID ", con);
+                SqlCommand cd = new SqlCommand("Delete GroupEvaluation where EvaluationId=@ID ", con);
                 cd.CommandType = CommandType.Text;
                 cd.Parameters.AddWithValue("@ID", this.stdID);
                 cd.ExecuteNonQuery();
-                SqlCommand cmd = new SqlCommand("Delete Advisor where Id=@ID ", con);
+                SqlCommand cmd = new SqlCommand("Delete Evaluation where Id=@ID ", con);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@ID", this.stdID);
                 cmd.ExecuteNonQuery();
-                
+
                 con.Close();
                 MessageBox.Show("Record Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                GetAdvisorRecord();
+                GetEvaluationRecord();
                 ClearTextBoxs();
             }
             else
             {
                 MessageBox.Show("Select an Advisor to Delete", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void updateDeleteEvaluationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UpdateDeleteEvaluation l = UpdateDeleteEvaluation.getInstance();
-            l.Show();
-            this.Hide();
         }
 
         private void updateDeleteProjectDetailsToolStripMenuItem_Click(object sender, EventArgs e)

@@ -14,13 +14,42 @@ namespace ProjectA
 {
     public partial class Advisor : Form
     {
+        SqlConnection con = new SqlConnection("Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora");
+        
         private static Advisor l = null;
+        
+        
         public Advisor()
         {
             InitializeComponent();
+            GetAdvisorRecord();
+            if (dataGridView1.RowCount == 0)
+            {
+                con.Open();
+                SqlCommand cmd3 = new SqlCommand("Insert into Advisor Values (@Id,@Designation,@Salary)", con);
+                cmd3.Parameters.AddWithValue("@Id", 1);
+                cmd3.Parameters.AddWithValue("@Designation", 7);
+                cmd3.Parameters.AddWithValue("@Salary", 10000);
+                cmd3.ExecuteNonQuery();
+                con.Close();
+            }
+
             DatabaseConnection.getInstance().ConnectionString = "Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora";
         }
-        SqlConnection con = new SqlConnection("Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora");
+        private void GetAdvisorRecord()
+        {
+            SqlConnection con = new SqlConnection("Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora");
+            SqlCommand cmd = new SqlCommand("Select * from Advisor", con);
+
+            DataTable dt = new DataTable();
+            con.Open();
+
+            SqlDataReader rd = cmd.ExecuteReader();
+            dt.Load(rd);
+            con.Close();
+
+            dataGridView1.DataSource = dt;
+        }
         public static Advisor getInstance()
         {
             if (l == null)
@@ -34,28 +63,30 @@ namespace ProjectA
                 return l;
             }
         }
-      
+        
         private void cmdSave_Click(object sender, EventArgs e)
         {
             // String cm = "select Max(AdvisorId)as maxID from Advisor";
             // int accounts = 0;
-            con.Open();
+
             //  string output = "NULL";
 
-            SqlCommand cmd3 = new SqlCommand("Insert into Advisor Values (@Id,@Designation,@Salary)", con);
-            cmd3.Parameters.AddWithValue("@Id", 1);
-            cmd3.Parameters.AddWithValue("@Designation", 7);
-            cmd3.Parameters.AddWithValue("@Salary", 10000);
-            cmd3.ExecuteNonQuery();
+
+            
+            con.Open();
+            //SqlCommand cmd3 = new SqlCommand("Insert into Advisor Values (@Id,@Designation,@Salary)", con);
+            //cmd3.Parameters.AddWithValue("@Id", 1);
+            //cmd3.Parameters.AddWithValue("@Designation", 7);
+            //cmd3.Parameters.AddWithValue("@Salary", 10000);
+            //cmd3.ExecuteNonQuery();
 
             SqlCommand cmd1 = new SqlCommand("select Max(Id)as maxID from Advisor", con);
             Int32 s = (Int32)cmd1.ExecuteScalar();
+            
+            
             // s = Convert.ToInt32(cmd1.ExecuteScalar());
-            if (s < 1)
-            {
-                s = s + 1;
-            }
-            else
+
+            if (s>=1)
             {
                 s = s + 1;
             }
@@ -97,6 +128,7 @@ namespace ProjectA
             //int rows = DatabaseConnection.getInstance().exectuteQuery(cmd);
             //MessageBox.Show(String.Format("{0} rows affected", rows));
             cmd2.ExecuteNonQuery();
+            GetAdvisorRecord();
             con.Close();
             MessageBox.Show("Advisor Added  Successfully", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
            
@@ -187,6 +219,54 @@ namespace ProjectA
         private void assignGroupProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GroupProject l = GroupProject.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSalary_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updateDeleteAdvisorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateDeleteAdvisor l = UpdateDeleteAdvisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void updateDeleteEvaluationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateDeleteEvaluation l = UpdateDeleteEvaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void updateDeletePojectDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateDeleteProject l = UpdateDeleteProject.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void deleteGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteGroup l = DeleteGroup.getInstance();
             l.Show();
             this.Hide();
         }

@@ -54,6 +54,12 @@
       <DependentUpon>Advisor.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="DeleteGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteGroup.Designer.cs">
+      <DependentUpon>DeleteGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Evaluation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,18 @@
     <Compile Include="UpdateDeleteAdvisor.Designer.cs">
       <DependentUpon>UpdateDeleteAdvisor.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateDeleteEvaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateDeleteEvaluation.Designer.cs">
+      <DependentUpon>UpdateDeleteEvaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDeleteProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateDeleteProject.Designer.cs">
+      <DependentUpon>UpdateDeleteProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateDeleteStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +150,9 @@
     </Compile>
     <EmbeddedResource Include="Advisor.resx">
       <DependentUpon>Advisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteGroup.resx">
+      <DependentUpon>DeleteGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Evaluation.resx">
       <DependentUpon>Evaluation.cs</DependentUpon>
@@ -174,6 +195,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateDeleteAdvisor.resx">
       <DependentUpon>UpdateDeleteAdvisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateDeleteEvaluation.resx">
+      <DependentUpon>UpdateDeleteEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateDeleteProject.resx">
+      <DependentUpon>UpdateDeleteProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateDeleteStudent.resx">
       <DependentUpon>UpdateDeleteStudent.cs</DependentUpon>
