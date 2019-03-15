@@ -35,6 +35,7 @@
             this.updateDeleteProjectDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupStudentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addStudentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +56,7 @@
             this.cmdSave = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.gdAdvisorRecord = new System.Windows.Forms.DataGridView();
-            this.deleteGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editGroupEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdAdvisorRecord)).BeginInit();
             this.SuspendLayout();
@@ -113,6 +114,13 @@
             this.groupToolStripMenuItem.Name = "groupToolStripMenuItem";
             this.groupToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.groupToolStripMenuItem.Text = "Group";
+            // 
+            // deleteGroupToolStripMenuItem
+            // 
+            this.deleteGroupToolStripMenuItem.Name = "deleteGroupToolStripMenuItem";
+            this.deleteGroupToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.deleteGroupToolStripMenuItem.Text = "Delete Group";
+            this.deleteGroupToolStripMenuItem.Click += new System.EventHandler(this.deleteGroupToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -196,7 +204,8 @@
             this.evaluateGroupsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.groupWiseToolStripMenuItem,
             this.individualEvaluationToolStripMenuItem,
-            this.updateDeleteEvaluationToolStripMenuItem});
+            this.updateDeleteEvaluationToolStripMenuItem,
+            this.editGroupEvaluationToolStripMenuItem});
             this.evaluateGroupsToolStripMenuItem.Name = "evaluateGroupsToolStripMenuItem";
             this.evaluateGroupsToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.evaluateGroupsToolStripMenuItem.Text = "Evaluation";
@@ -291,12 +300,12 @@
             this.gdAdvisorRecord.TabIndex = 37;
             this.gdAdvisorRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdAdvisorRecord_CellClick);
             // 
-            // deleteGroupToolStripMenuItem
+            // editGroupEvaluationToolStripMenuItem
             // 
-            this.deleteGroupToolStripMenuItem.Name = "deleteGroupToolStripMenuItem";
-            this.deleteGroupToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.deleteGroupToolStripMenuItem.Text = "Delete Group";
-            this.deleteGroupToolStripMenuItem.Click += new System.EventHandler(this.deleteGroupToolStripMenuItem_Click);
+            this.editGroupEvaluationToolStripMenuItem.Name = "editGroupEvaluationToolStripMenuItem";
+            this.editGroupEvaluationToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.editGroupEvaluationToolStripMenuItem.Text = "EditGroup Evaluation";
+            this.editGroupEvaluationToolStripMenuItem.Click += new System.EventHandler(this.editGroupEvaluationToolStripMenuItem_Click);
             // 
             // UpdateDeleteAdvisor
             // 
@@ -352,5 +361,6 @@
         private System.Windows.Forms.ToolStripMenuItem updateDeleteEvaluationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateDeleteProjectDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteGroupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editGroupEvaluationToolStripMenuItem;
     }
 }

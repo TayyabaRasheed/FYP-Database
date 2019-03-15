@@ -32,6 +32,8 @@ namespace ProjectA
             }
         }
         SqlConnection con = new SqlConnection("Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora");
+        private int stdID;
+
         public int EvaluationID { get; set; }
         public int GroupID { get; set; }
         private void GetGroupRecord()
@@ -203,6 +205,44 @@ namespace ProjectA
         private void deleteGroupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DeleteGroup l = DeleteGroup.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (EvaluationID > 0)
+            {
+                con.Open();
+                SqlCommand cd = new SqlCommand("Delete GroupEvaluation where EvaluationId=@ID ", con);
+                cd.CommandType = CommandType.Text;
+                cd.Parameters.AddWithValue("@ID", this.EvaluationID);
+                cd.ExecuteNonQuery();
+                //SqlCommand cmd = new SqlCommand("Delete Advisor where Id=@ID ", con);
+                //cmd.CommandType = CommandType.Text;
+                //cmd.Parameters.AddWithValue("@ID", this.stdID);
+                //cmd.ExecuteNonQuery();
+                GetEvaluatioRecord();
+                con.Close();
+                MessageBox.Show("Record Deleted Successfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+               // GetAdvisorRecord();
+               // ClearTextBoxs();
+            }
+            else
+            {
+                MessageBox.Show("Select an Advisor to Delete", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void editGroupEvaluationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditEvaluation l = EditEvaluation.getInstance();
             l.Show();
             this.Hide();
         }

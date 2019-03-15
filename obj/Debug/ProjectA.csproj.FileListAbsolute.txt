@@ -12,7 +12,6 @@ E:\ProjectA\ProjectA\obj\Debug\ProjectA.StudentsRecord.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.Advisor.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.UpdateDeleteStudent.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.GroupStudents.resources
-E:\ProjectA\ProjectA\obj\Debug\ProjectA.Group.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.Project.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.GroupProject.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.Evaluation.resources

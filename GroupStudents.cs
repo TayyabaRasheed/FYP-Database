@@ -171,12 +171,12 @@ namespace ProjectA
 
 
 
-        private void createGroupToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Group l = Group.getInstance();
-            l.Show();
-            this.Hide();
-        }
+        //private void createGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    Group l = Group.getInstance();
+        //    l.Show();
+        //    this.Hide();
+        //}
 
         private void seToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -279,6 +279,13 @@ namespace ProjectA
         private void deleteGroupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DeleteGroup l = DeleteGroup.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void editGroupEvaluationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditEvaluation l = EditEvaluation.getInstance();
             l.Show();
             this.Hide();
         }

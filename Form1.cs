@@ -254,5 +254,12 @@ namespace ProjectA
             l.Show();
             this.Hide();
         }
+
+        private void editGroupEvaluationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditEvaluation l = EditEvaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
     }
 }
