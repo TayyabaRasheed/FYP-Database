@@ -1,6 +1,6 @@
 ﻿namespace ProjectA
 {
-    partial class HomePage
+    partial class Evaluation
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtTotalMarks = new System.Windows.Forms.TextBox();
+            this.txtMarksWeightage = new System.Windows.Forms.TextBox();
             this.homeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addStudentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.seToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,15 +47,39 @@
             this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assignGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(147, 83);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.TabIndex = 0;
+            // 
+            // txtTotalMarks
+            // 
+            this.txtTotalMarks.Location = new System.Drawing.Point(147, 136);
+            this.txtTotalMarks.Name = "txtTotalMarks";
+            this.txtTotalMarks.Size = new System.Drawing.Size(100, 20);
+            this.txtTotalMarks.TabIndex = 1;
+            // 
+            // txtMarksWeightage
+            // 
+            this.txtMarksWeightage.Location = new System.Drawing.Point(147, 187);
+            this.txtMarksWeightage.Name = "txtMarksWeightage";
+            this.txtMarksWeightage.Size = new System.Drawing.Size(100, 20);
+            this.txtMarksWeightage.TabIndex = 2;
             // 
             // homeToolStripMenuItem1
             // 
             this.homeToolStripMenuItem1.Name = "homeToolStripMenuItem1";
             this.homeToolStripMenuItem1.Size = new System.Drawing.Size(52, 20);
             this.homeToolStripMenuItem1.Text = "Home";
-            this.homeToolStripMenuItem1.Click += new System.EventHandler(this.homeToolStripMenuItem1_Click);
             // 
             // addStudentToolStripMenuItem1
             // 
@@ -69,28 +96,24 @@
             this.seToolStripMenuItem.Name = "seToolStripMenuItem";
             this.seToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.seToolStripMenuItem.Text = "Add Students";
-            this.seToolStripMenuItem.Click += new System.EventHandler(this.seToolStripMenuItem_Click);
             // 
             // searchStudentsToolStripMenuItem
             // 
             this.searchStudentsToolStripMenuItem.Name = "searchStudentsToolStripMenuItem";
             this.searchStudentsToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.searchStudentsToolStripMenuItem.Text = "Student\'s Record";
-            this.searchStudentsToolStripMenuItem.Click += new System.EventHandler(this.searchStudentsToolStripMenuItem_Click);
             // 
             // editStudentDataToolStripMenuItem
             // 
             this.editStudentDataToolStripMenuItem.Name = "editStudentDataToolStripMenuItem";
             this.editStudentDataToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.editStudentDataToolStripMenuItem.Text = "Update&Delete Student Data";
-            this.editStudentDataToolStripMenuItem.Click += new System.EventHandler(this.editStudentDataToolStripMenuItem_Click);
             // 
             // addInstructorToolStripMenuItem1
             // 
             this.addInstructorToolStripMenuItem1.Name = "addInstructorToolStripMenuItem1";
             this.addInstructorToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
             this.addInstructorToolStripMenuItem1.Text = "Instructor";
-            this.addInstructorToolStripMenuItem1.Click += new System.EventHandler(this.addInstructorToolStripMenuItem1_Click);
             // 
             // evaluateGroupsToolStripMenuItem
             // 
@@ -104,15 +127,14 @@
             // groupWiseToolStripMenuItem
             // 
             this.groupWiseToolStripMenuItem.Name = "groupWiseToolStripMenuItem";
-            this.groupWiseToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.groupWiseToolStripMenuItem.Text = "Evaluation Details";
-            this.groupWiseToolStripMenuItem.Click += new System.EventHandler(this.groupWiseToolStripMenuItem_Click);
+            this.groupWiseToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.groupWiseToolStripMenuItem.Text = "Group wise ";
             // 
             // individualEvaluationToolStripMenuItem
             // 
             this.individualEvaluationToolStripMenuItem.Name = "individualEvaluationToolStripMenuItem";
-            this.individualEvaluationToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.individualEvaluationToolStripMenuItem.Text = "Groupl Evaluation";
+            this.individualEvaluationToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.individualEvaluationToolStripMenuItem.Text = "Individual Evaluation";
             // 
             // evaluateIndividualsToolStripMenuItem
             // 
@@ -132,8 +154,8 @@
             this.projectToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(702, 24);
-            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Size = new System.Drawing.Size(581, 24);
+            this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // groupToolStripMenuItem
@@ -149,7 +171,6 @@
             this.groupStudentsToolStripMenuItem1.Name = "groupStudentsToolStripMenuItem1";
             this.groupStudentsToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
             this.groupStudentsToolStripMenuItem1.Text = "Group Students";
-            this.groupStudentsToolStripMenuItem1.Click += new System.EventHandler(this.groupStudentsToolStripMenuItem1_Click);
             // 
             // projectToolStripMenuItem
             // 
@@ -159,32 +180,72 @@
             this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
             this.projectToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.projectToolStripMenuItem.Text = "Project";
-            this.projectToolStripMenuItem.Click += new System.EventHandler(this.projectToolStripMenuItem_Click);
             // 
             // createProjectToolStripMenuItem
             // 
             this.createProjectToolStripMenuItem.Name = "createProjectToolStripMenuItem";
             this.createProjectToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.createProjectToolStripMenuItem.Text = "Create Project";
-            this.createProjectToolStripMenuItem.Click += new System.EventHandler(this.createProjectToolStripMenuItem_Click);
             // 
             // assignGroupProjectToolStripMenuItem
             // 
             this.assignGroupProjectToolStripMenuItem.Name = "assignGroupProjectToolStripMenuItem";
             this.assignGroupProjectToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.assignGroupProjectToolStripMenuItem.Text = "Assign Group Project";
-            this.assignGroupProjectToolStripMenuItem.Click += new System.EventHandler(this.assignGroupProjectToolStripMenuItem_Click);
             // 
-            // HomePage
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(64, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(64, 143);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Total Marks";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(64, 194);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Weightage";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(147, 251);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "cmdSave";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Evaluation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 363);
+            this.ClientSize = new System.Drawing.Size(581, 306);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "HomePage";
-            this.Text = "HomePage";
-            this.Load += new System.EventHandler(this.HomePage_Load);
+            this.Controls.Add(this.txtMarksWeightage);
+            this.Controls.Add(this.txtTotalMarks);
+            this.Controls.Add(this.txtName);
+            this.Name = "Evaluation";
+            this.Text = "Evaluation";
+            this.Load += new System.EventHandler(this.Evaluation_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -194,6 +255,9 @@
 
         #endregion
 
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtTotalMarks;
+        private System.Windows.Forms.TextBox txtMarksWeightage;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem addStudentToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem seToolStripMenuItem;
@@ -210,5 +274,9 @@
         private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createProjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assignGroupProjectToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
     }
 }

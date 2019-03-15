@@ -1,6 +1,6 @@
 ﻿namespace ProjectA
 {
-    partial class HomePage
+    partial class GroupStudents
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.dtpAssDate = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.homeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addStudentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.seToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,19 +45,66 @@
             this.evaluateIndividualsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.groupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupStudentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.assignGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dptCreate = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(479, 81);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(286, 228);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Active",
+            "In-active"});
+            this.cmbStatus.Location = new System.Drawing.Point(237, 142);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(200, 21);
+            this.cmbStatus.TabIndex = 1;
+            // 
+            // dtpAssDate
+            // 
+            this.dtpAssDate.Location = new System.Drawing.Point(237, 204);
+            this.dtpAssDate.Name = "dtpAssDate";
+            this.dtpAssDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpAssDate.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(112, 150);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Status";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(110, 211);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Assignment Date";
             // 
             // homeToolStripMenuItem1
             // 
             this.homeToolStripMenuItem1.Name = "homeToolStripMenuItem1";
             this.homeToolStripMenuItem1.Size = new System.Drawing.Size(52, 20);
             this.homeToolStripMenuItem1.Text = "Home";
-            this.homeToolStripMenuItem1.Click += new System.EventHandler(this.homeToolStripMenuItem1_Click);
             // 
             // addStudentToolStripMenuItem1
             // 
@@ -69,28 +121,24 @@
             this.seToolStripMenuItem.Name = "seToolStripMenuItem";
             this.seToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.seToolStripMenuItem.Text = "Add Students";
-            this.seToolStripMenuItem.Click += new System.EventHandler(this.seToolStripMenuItem_Click);
             // 
             // searchStudentsToolStripMenuItem
             // 
             this.searchStudentsToolStripMenuItem.Name = "searchStudentsToolStripMenuItem";
             this.searchStudentsToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.searchStudentsToolStripMenuItem.Text = "Student\'s Record";
-            this.searchStudentsToolStripMenuItem.Click += new System.EventHandler(this.searchStudentsToolStripMenuItem_Click);
             // 
             // editStudentDataToolStripMenuItem
             // 
             this.editStudentDataToolStripMenuItem.Name = "editStudentDataToolStripMenuItem";
             this.editStudentDataToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.editStudentDataToolStripMenuItem.Text = "Update&Delete Student Data";
-            this.editStudentDataToolStripMenuItem.Click += new System.EventHandler(this.editStudentDataToolStripMenuItem_Click);
             // 
             // addInstructorToolStripMenuItem1
             // 
             this.addInstructorToolStripMenuItem1.Name = "addInstructorToolStripMenuItem1";
             this.addInstructorToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
             this.addInstructorToolStripMenuItem1.Text = "Instructor";
-            this.addInstructorToolStripMenuItem1.Click += new System.EventHandler(this.addInstructorToolStripMenuItem1_Click);
             // 
             // evaluateGroupsToolStripMenuItem
             // 
@@ -104,15 +152,14 @@
             // groupWiseToolStripMenuItem
             // 
             this.groupWiseToolStripMenuItem.Name = "groupWiseToolStripMenuItem";
-            this.groupWiseToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.groupWiseToolStripMenuItem.Text = "Evaluation Details";
-            this.groupWiseToolStripMenuItem.Click += new System.EventHandler(this.groupWiseToolStripMenuItem_Click);
+            this.groupWiseToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.groupWiseToolStripMenuItem.Text = "Group wise ";
             // 
             // individualEvaluationToolStripMenuItem
             // 
             this.individualEvaluationToolStripMenuItem.Name = "individualEvaluationToolStripMenuItem";
-            this.individualEvaluationToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.individualEvaluationToolStripMenuItem.Text = "Groupl Evaluation";
+            this.individualEvaluationToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.individualEvaluationToolStripMenuItem.Text = "Individual Evaluation";
             // 
             // evaluateIndividualsToolStripMenuItem
             // 
@@ -128,63 +175,79 @@
             this.addInstructorToolStripMenuItem1,
             this.evaluateGroupsToolStripMenuItem,
             this.evaluateIndividualsToolStripMenuItem,
-            this.groupToolStripMenuItem,
-            this.projectToolStripMenuItem});
+            this.groupToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(702, 24);
-            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Size = new System.Drawing.Size(1002, 24);
+            this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // groupToolStripMenuItem
             // 
             this.groupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createGroupToolStripMenuItem,
             this.groupStudentsToolStripMenuItem1});
             this.groupToolStripMenuItem.Name = "groupToolStripMenuItem";
             this.groupToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.groupToolStripMenuItem.Text = "Group";
+            // 
+            // createGroupToolStripMenuItem
+            // 
+            this.createGroupToolStripMenuItem.Name = "createGroupToolStripMenuItem";
+            this.createGroupToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.createGroupToolStripMenuItem.Text = "Create Group";
+            this.createGroupToolStripMenuItem.Click += new System.EventHandler(this.createGroupToolStripMenuItem_Click);
             // 
             // groupStudentsToolStripMenuItem1
             // 
             this.groupStudentsToolStripMenuItem1.Name = "groupStudentsToolStripMenuItem1";
             this.groupStudentsToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
             this.groupStudentsToolStripMenuItem1.Text = "Group Students";
-            this.groupStudentsToolStripMenuItem1.Click += new System.EventHandler(this.groupStudentsToolStripMenuItem1_Click);
             // 
-            // projectToolStripMenuItem
+            // button1
             // 
-            this.projectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createProjectToolStripMenuItem,
-            this.assignGroupProjectToolStripMenuItem});
-            this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
-            this.projectToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.projectToolStripMenuItem.Text = "Project";
-            this.projectToolStripMenuItem.Click += new System.EventHandler(this.projectToolStripMenuItem_Click);
+            this.button1.Location = new System.Drawing.Point(54, 276);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(143, 33);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Add To Group";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // createProjectToolStripMenuItem
+            // label3
             // 
-            this.createProjectToolStripMenuItem.Name = "createProjectToolStripMenuItem";
-            this.createProjectToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.createProjectToolStripMenuItem.Text = "Create Project";
-            this.createProjectToolStripMenuItem.Click += new System.EventHandler(this.createProjectToolStripMenuItem_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(112, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Created On";
             // 
-            // assignGroupProjectToolStripMenuItem
+            // dptCreate
             // 
-            this.assignGroupProjectToolStripMenuItem.Name = "assignGroupProjectToolStripMenuItem";
-            this.assignGroupProjectToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.assignGroupProjectToolStripMenuItem.Text = "Assign Group Project";
-            this.assignGroupProjectToolStripMenuItem.Click += new System.EventHandler(this.assignGroupProjectToolStripMenuItem_Click);
+            this.dptCreate.Location = new System.Drawing.Point(237, 81);
+            this.dptCreate.Name = "dptCreate";
+            this.dptCreate.Size = new System.Drawing.Size(200, 20);
+            this.dptCreate.TabIndex = 11;
             // 
-            // HomePage
+            // GroupStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 363);
+            this.ClientSize = new System.Drawing.Size(1002, 360);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dptCreate);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "HomePage";
-            this.Text = "HomePage";
-            this.Load += new System.EventHandler(this.HomePage_Load);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dtpAssDate);
+            this.Controls.Add(this.cmbStatus);
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "GroupStudents";
+            this.Text = "GroupStudents";
+            this.Load += new System.EventHandler(this.GroupStudents_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -194,6 +257,11 @@
 
         #endregion
 
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.DateTimePicker dtpAssDate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem addStudentToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem seToolStripMenuItem;
@@ -205,10 +273,11 @@
         private System.Windows.Forms.ToolStripMenuItem individualEvaluationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem evaluateIndividualsToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem groupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createGroupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem groupStudentsToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createProjectToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem assignGroupProjectToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dptCreate;
     }
 }

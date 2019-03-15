@@ -55,6 +55,8 @@
             this.rdfml = new System.Windows.Forms.RadioButton();
             this.txtReg = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.groupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -175,7 +177,8 @@
             this.addStudentToolStripMenuItem1,
             this.addInstructorToolStripMenuItem1,
             this.evaluateGroupsToolStripMenuItem,
-            this.evaluateIndividualsToolStripMenuItem});
+            this.evaluateIndividualsToolStripMenuItem,
+            this.groupToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(575, 24);
@@ -281,6 +284,21 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "RegistrationNo";
             // 
+            // groupToolStripMenuItem
+            // 
+            this.groupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.groupStudentToolStripMenuItem});
+            this.groupToolStripMenuItem.Name = "groupToolStripMenuItem";
+            this.groupToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.groupToolStripMenuItem.Text = "Group";
+            // 
+            // groupStudentToolStripMenuItem
+            // 
+            this.groupStudentToolStripMenuItem.Name = "groupStudentToolStripMenuItem";
+            this.groupStudentToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.groupStudentToolStripMenuItem.Text = "GroupStudent";
+            this.groupStudentToolStripMenuItem.Click += new System.EventHandler(this.groupStudentToolStripMenuItem_Click);
+            // 
             // Person
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +360,8 @@
         private System.Windows.Forms.RadioButton rdfml;
         private System.Windows.Forms.TextBox txtReg;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ToolStripMenuItem groupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem groupStudentToolStripMenuItem;
     }
 }
 

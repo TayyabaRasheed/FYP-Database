@@ -67,5 +67,54 @@ namespace ProjectA
             l.Show();
             this.Hide();
         }
+
+        private void groupStudentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GroupStudents l = GroupStudents.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void groupStudentsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GroupStudents l = GroupStudents.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void projectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Project l = Project.getInstance();
+            //l.Show();
+            //this.Hide();
+        }
+
+        private void createProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Project l = Project.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void assignGroupProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GroupProject l = GroupProject.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void groupWiseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Evaluation l = Evaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        //private void createGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    Group l = Group.getInstance();
+        //    l.Show();
+        //    this.Hide();
+        //}
     }
 }

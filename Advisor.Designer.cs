@@ -47,6 +47,9 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.groupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,7 +128,9 @@
             this.addStudentToolStripMenuItem1,
             this.addInstructorToolStripMenuItem1,
             this.evaluateGroupsToolStripMenuItem,
-            this.evaluateIndividualsToolStripMenuItem});
+            this.evaluateIndividualsToolStripMenuItem,
+            this.groupToolStripMenuItem,
+            this.projectToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(806, 24);
@@ -203,6 +208,28 @@
             this.label3.TabIndex = 32;
             this.label3.Text = "Advisor ID";
             // 
+            // groupToolStripMenuItem
+            // 
+            this.groupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.groupStudentToolStripMenuItem});
+            this.groupToolStripMenuItem.Name = "groupToolStripMenuItem";
+            this.groupToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.groupToolStripMenuItem.Text = "Group";
+            // 
+            // groupStudentToolStripMenuItem
+            // 
+            this.groupStudentToolStripMenuItem.Name = "groupStudentToolStripMenuItem";
+            this.groupStudentToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.groupStudentToolStripMenuItem.Text = "Group Student";
+            this.groupStudentToolStripMenuItem.Click += new System.EventHandler(this.groupStudentToolStripMenuItem_Click);
+            // 
+            // projectToolStripMenuItem
+            // 
+            this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
+            this.projectToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.projectToolStripMenuItem.Text = "Project";
+            this.projectToolStripMenuItem.Click += new System.EventHandler(this.projectToolStripMenuItem_Click);
+            // 
             // Advisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,5 +273,8 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripMenuItem groupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem groupStudentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
     }
 }

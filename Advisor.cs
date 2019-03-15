@@ -98,5 +98,17 @@ namespace ProjectA
         {
             DatabaseConnection.getInstance().closeConnection();
         }
+
+        private void projectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Project l = Project.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void groupStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

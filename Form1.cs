@@ -142,5 +142,12 @@ namespace ProjectA
         {
 
         }
+
+        private void groupStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GroupStudents l = GroupStudents.getInstance();
+            l.Show();
+            this.Hide();
+        }
     }
 }
