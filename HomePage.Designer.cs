@@ -41,6 +41,7 @@
             this.groupWiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.individualEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateDeleteEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editGroupEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.groupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupStudentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -127,7 +128,8 @@
             this.evaluateGroupsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.groupWiseToolStripMenuItem,
             this.individualEvaluationToolStripMenuItem,
-            this.updateDeleteEvaluationToolStripMenuItem});
+            this.updateDeleteEvaluationToolStripMenuItem,
+            this.editGroupEvaluationToolStripMenuItem});
             this.evaluateGroupsToolStripMenuItem.Name = "evaluateGroupsToolStripMenuItem";
             this.evaluateGroupsToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.evaluateGroupsToolStripMenuItem.Text = "Evaluation";
@@ -152,6 +154,13 @@
             this.updateDeleteEvaluationToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.updateDeleteEvaluationToolStripMenuItem.Text = "UpdateDelete Evaluation";
             this.updateDeleteEvaluationToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteEvaluationToolStripMenuItem_Click);
+            // 
+            // editGroupEvaluationToolStripMenuItem
+            // 
+            this.editGroupEvaluationToolStripMenuItem.Name = "editGroupEvaluationToolStripMenuItem";
+            this.editGroupEvaluationToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.editGroupEvaluationToolStripMenuItem.Text = "EditGroup Evaluation";
+            this.editGroupEvaluationToolStripMenuItem.Click += new System.EventHandler(this.editGroupEvaluationToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -263,5 +272,6 @@
         private System.Windows.Forms.ToolStripMenuItem updateDeleteEvaluationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateDeleteProjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteGroupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editGroupEvaluationToolStripMenuItem;
     }
 }

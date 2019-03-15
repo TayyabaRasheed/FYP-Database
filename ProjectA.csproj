@@ -60,6 +60,12 @@
     <Compile Include="DeleteGroup.Designer.cs">
       <DependentUpon>DeleteGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditEvaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEvaluation.Designer.cs">
+      <DependentUpon>EditEvaluation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Evaluation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteGroup.resx">
       <DependentUpon>DeleteGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEvaluation.resx">
+      <DependentUpon>EditEvaluation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Evaluation.resx">
       <DependentUpon>Evaluation.cs</DependentUpon>

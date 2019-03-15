@@ -22,3 +22,4 @@ E:\ProjectA\ProjectA\obj\Debug\ProjectA.UpdateDeleteAdvisor.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.UpdateDeleteEvaluation.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.UpdateDeleteProject.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.DeleteGroup.resources
+E:\ProjectA\ProjectA\obj\Debug\ProjectA.EditEvaluation.resources
