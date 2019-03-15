@@ -34,16 +34,18 @@
             this.searchStudentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editStudentDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addInstructorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.addAdvisorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.projectAdvisorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.evaluateGroupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupWiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.individualEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.evaluateIndividualsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.groupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupStudentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assignGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateDeleteAdvisorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,10 +89,28 @@
             // 
             // addInstructorToolStripMenuItem1
             // 
+            this.addInstructorToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addAdvisorToolStripMenuItem,
+            this.projectAdvisorToolStripMenuItem,
+            this.updateDeleteAdvisorToolStripMenuItem});
             this.addInstructorToolStripMenuItem1.Name = "addInstructorToolStripMenuItem1";
             this.addInstructorToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
             this.addInstructorToolStripMenuItem1.Text = "Instructor";
             this.addInstructorToolStripMenuItem1.Click += new System.EventHandler(this.addInstructorToolStripMenuItem1_Click);
+            // 
+            // addAdvisorToolStripMenuItem
+            // 
+            this.addAdvisorToolStripMenuItem.Name = "addAdvisorToolStripMenuItem";
+            this.addAdvisorToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.addAdvisorToolStripMenuItem.Text = "Add Advisor";
+            this.addAdvisorToolStripMenuItem.Click += new System.EventHandler(this.addAdvisorToolStripMenuItem_Click);
+            // 
+            // projectAdvisorToolStripMenuItem
+            // 
+            this.projectAdvisorToolStripMenuItem.Name = "projectAdvisorToolStripMenuItem";
+            this.projectAdvisorToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.projectAdvisorToolStripMenuItem.Text = "Project Advisor";
+            this.projectAdvisorToolStripMenuItem.Click += new System.EventHandler(this.projectAdvisorToolStripMenuItem_Click);
             // 
             // evaluateGroupsToolStripMenuItem
             // 
@@ -113,12 +133,7 @@
             this.individualEvaluationToolStripMenuItem.Name = "individualEvaluationToolStripMenuItem";
             this.individualEvaluationToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.individualEvaluationToolStripMenuItem.Text = "Groupl Evaluation";
-            // 
-            // evaluateIndividualsToolStripMenuItem
-            // 
-            this.evaluateIndividualsToolStripMenuItem.Name = "evaluateIndividualsToolStripMenuItem";
-            this.evaluateIndividualsToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
-            this.evaluateIndividualsToolStripMenuItem.Text = "Evaluate Individuals";
+            this.individualEvaluationToolStripMenuItem.Click += new System.EventHandler(this.individualEvaluationToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -127,7 +142,6 @@
             this.addStudentToolStripMenuItem1,
             this.addInstructorToolStripMenuItem1,
             this.evaluateGroupsToolStripMenuItem,
-            this.evaluateIndividualsToolStripMenuItem,
             this.groupToolStripMenuItem,
             this.projectToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -175,6 +189,13 @@
             this.assignGroupProjectToolStripMenuItem.Text = "Assign Group Project";
             this.assignGroupProjectToolStripMenuItem.Click += new System.EventHandler(this.assignGroupProjectToolStripMenuItem_Click);
             // 
+            // updateDeleteAdvisorToolStripMenuItem
+            // 
+            this.updateDeleteAdvisorToolStripMenuItem.Name = "updateDeleteAdvisorToolStripMenuItem";
+            this.updateDeleteAdvisorToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.updateDeleteAdvisorToolStripMenuItem.Text = "UpdateDelete Advisor";
+            this.updateDeleteAdvisorToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteAdvisorToolStripMenuItem_Click);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,12 +224,14 @@
         private System.Windows.Forms.ToolStripMenuItem evaluateGroupsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem groupWiseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem individualEvaluationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem evaluateIndividualsToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem groupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem groupStudentsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createProjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assignGroupProjectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addAdvisorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem projectAdvisorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateDeleteAdvisorToolStripMenuItem;
     }
 }

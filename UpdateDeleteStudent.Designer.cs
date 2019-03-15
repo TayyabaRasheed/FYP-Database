@@ -30,7 +30,6 @@
         {
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.rdfml = new System.Windows.Forms.RadioButton();
             this.rdmale = new System.Windows.Forms.RadioButton();
@@ -45,19 +44,24 @@
             this.txtContact = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.cmdSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.assignGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupStudentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addStudentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.seToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchStudentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editStudentDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addInstructorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.addAdvisorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.projectAdvisorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.evaluateGroupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupWiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.individualEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.evaluateIndividualsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,15 +85,6 @@
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(122, 298);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 29);
-            this.button1.TabIndex = 52;
-            this.button1.Text = "Retrieve";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // linkLabel1
             // 
@@ -212,15 +207,6 @@
             this.txtFirstName.Size = new System.Drawing.Size(200, 20);
             this.txtFirstName.TabIndex = 37;
             // 
-            // cmdSave
-            // 
-            this.cmdSave.Location = new System.Drawing.Point(6, 298);
-            this.cmdSave.Name = "cmdSave";
-            this.cmdSave.Size = new System.Drawing.Size(87, 29);
-            this.cmdSave.TabIndex = 36;
-            this.cmdSave.Text = "Insert";
-            this.cmdSave.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -231,12 +217,65 @@
             this.dataGridView1.TabIndex = 55;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // assignGroupProjectToolStripMenuItem
+            // 
+            this.assignGroupProjectToolStripMenuItem.Name = "assignGroupProjectToolStripMenuItem";
+            this.assignGroupProjectToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.assignGroupProjectToolStripMenuItem.Text = "Assign Group Project";
+            this.assignGroupProjectToolStripMenuItem.Click += new System.EventHandler(this.assignGroupProjectToolStripMenuItem_Click);
+            // 
+            // projectToolStripMenuItem
+            // 
+            this.projectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createProjectToolStripMenuItem,
+            this.assignGroupProjectToolStripMenuItem});
+            this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
+            this.projectToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.projectToolStripMenuItem.Text = "Project";
+            // 
+            // createProjectToolStripMenuItem
+            // 
+            this.createProjectToolStripMenuItem.Name = "createProjectToolStripMenuItem";
+            this.createProjectToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.createProjectToolStripMenuItem.Text = "Create Project";
+            this.createProjectToolStripMenuItem.Click += new System.EventHandler(this.createProjectToolStripMenuItem_Click);
+            // 
+            // groupStudentsToolStripMenuItem1
+            // 
+            this.groupStudentsToolStripMenuItem1.Name = "groupStudentsToolStripMenuItem1";
+            this.groupStudentsToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
+            this.groupStudentsToolStripMenuItem1.Text = "Group Students";
+            this.groupStudentsToolStripMenuItem1.Click += new System.EventHandler(this.groupStudentsToolStripMenuItem1_Click);
+            // 
+            // groupToolStripMenuItem
+            // 
+            this.groupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.groupStudentsToolStripMenuItem1});
+            this.groupToolStripMenuItem.Name = "groupToolStripMenuItem";
+            this.groupToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.groupToolStripMenuItem.Text = "Group";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeToolStripMenuItem1,
+            this.addStudentToolStripMenuItem1,
+            this.addInstructorToolStripMenuItem1,
+            this.evaluateGroupsToolStripMenuItem,
+            this.groupToolStripMenuItem,
+            this.projectToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(877, 24);
+            this.menuStrip1.TabIndex = 56;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // homeToolStripMenuItem1
             // 
             this.homeToolStripMenuItem1.Name = "homeToolStripMenuItem1";
             this.homeToolStripMenuItem1.Size = new System.Drawing.Size(52, 20);
             this.homeToolStripMenuItem1.Text = "Home";
-            this.homeToolStripMenuItem1.Click += new System.EventHandler(this.homeToolStripMenuItem1_Click);
+            this.homeToolStripMenuItem1.Click += new System.EventHandler(this.homeToolStripMenuItem1_Click_1);
             // 
             // addStudentToolStripMenuItem1
             // 
@@ -253,26 +292,44 @@
             this.seToolStripMenuItem.Name = "seToolStripMenuItem";
             this.seToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.seToolStripMenuItem.Text = "Add Students";
-            this.seToolStripMenuItem.Click += new System.EventHandler(this.seToolStripMenuItem_Click);
+            this.seToolStripMenuItem.Click += new System.EventHandler(this.seToolStripMenuItem_Click_1);
             // 
             // searchStudentsToolStripMenuItem
             // 
             this.searchStudentsToolStripMenuItem.Name = "searchStudentsToolStripMenuItem";
             this.searchStudentsToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.searchStudentsToolStripMenuItem.Text = "Student\'s Record";
-            this.searchStudentsToolStripMenuItem.Click += new System.EventHandler(this.searchStudentsToolStripMenuItem_Click);
+            this.searchStudentsToolStripMenuItem.Click += new System.EventHandler(this.searchStudentsToolStripMenuItem_Click_1);
             // 
             // editStudentDataToolStripMenuItem
             // 
             this.editStudentDataToolStripMenuItem.Name = "editStudentDataToolStripMenuItem";
             this.editStudentDataToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.editStudentDataToolStripMenuItem.Text = "Update&Delete Student Data";
+            this.editStudentDataToolStripMenuItem.Click += new System.EventHandler(this.editStudentDataToolStripMenuItem_Click);
             // 
             // addInstructorToolStripMenuItem1
             // 
+            this.addInstructorToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addAdvisorToolStripMenuItem,
+            this.projectAdvisorToolStripMenuItem});
             this.addInstructorToolStripMenuItem1.Name = "addInstructorToolStripMenuItem1";
             this.addInstructorToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
             this.addInstructorToolStripMenuItem1.Text = "Instructor";
+            // 
+            // addAdvisorToolStripMenuItem
+            // 
+            this.addAdvisorToolStripMenuItem.Name = "addAdvisorToolStripMenuItem";
+            this.addAdvisorToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.addAdvisorToolStripMenuItem.Text = "Add Advisor";
+            this.addAdvisorToolStripMenuItem.Click += new System.EventHandler(this.addAdvisorToolStripMenuItem_Click);
+            // 
+            // projectAdvisorToolStripMenuItem
+            // 
+            this.projectAdvisorToolStripMenuItem.Name = "projectAdvisorToolStripMenuItem";
+            this.projectAdvisorToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.projectAdvisorToolStripMenuItem.Text = "Project Advisor";
+            this.projectAdvisorToolStripMenuItem.Click += new System.EventHandler(this.projectAdvisorToolStripMenuItem_Click);
             // 
             // evaluateGroupsToolStripMenuItem
             // 
@@ -286,34 +343,16 @@
             // groupWiseToolStripMenuItem
             // 
             this.groupWiseToolStripMenuItem.Name = "groupWiseToolStripMenuItem";
-            this.groupWiseToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.groupWiseToolStripMenuItem.Text = "Group wise ";
+            this.groupWiseToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.groupWiseToolStripMenuItem.Text = "Evaluation Details";
+            this.groupWiseToolStripMenuItem.Click += new System.EventHandler(this.groupWiseToolStripMenuItem_Click);
             // 
             // individualEvaluationToolStripMenuItem
             // 
             this.individualEvaluationToolStripMenuItem.Name = "individualEvaluationToolStripMenuItem";
-            this.individualEvaluationToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.individualEvaluationToolStripMenuItem.Text = "Individual Evaluation";
-            // 
-            // evaluateIndividualsToolStripMenuItem
-            // 
-            this.evaluateIndividualsToolStripMenuItem.Name = "evaluateIndividualsToolStripMenuItem";
-            this.evaluateIndividualsToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
-            this.evaluateIndividualsToolStripMenuItem.Text = "Evaluate Individuals";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.homeToolStripMenuItem1,
-            this.addStudentToolStripMenuItem1,
-            this.addInstructorToolStripMenuItem1,
-            this.evaluateGroupsToolStripMenuItem,
-            this.evaluateIndividualsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(877, 24);
-            this.menuStrip1.TabIndex = 56;
-            this.menuStrip1.Text = "menuStrip1";
+            this.individualEvaluationToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.individualEvaluationToolStripMenuItem.Text = "Groupl Evaluation";
+            this.individualEvaluationToolStripMenuItem.Click += new System.EventHandler(this.individualEvaluationToolStripMenuItem_Click);
             // 
             // UpdateDeleteStudent
             // 
@@ -324,7 +363,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.rdfml);
             this.Controls.Add(this.rdmale);
@@ -339,7 +377,6 @@
             this.Controls.Add(this.txtContact);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.cmdSave);
             this.Name = "UpdateDeleteStudent";
             this.Text = "UpdateDeleteStudent";
             this.Load += new System.EventHandler(this.UpdateDeleteStudent_Load);
@@ -355,7 +392,6 @@
 
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.RadioButton rdfml;
         private System.Windows.Forms.RadioButton rdmale;
@@ -370,18 +406,23 @@
         private System.Windows.Forms.TextBox txtContact;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.Button cmdSave;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem assignGroupProjectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createProjectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem groupStudentsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem groupToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem addStudentToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem seToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchStudentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editStudentDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addInstructorToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem addAdvisorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem projectAdvisorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem evaluateGroupsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem groupWiseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem individualEvaluationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem evaluateIndividualsToolStripMenuItem;
-        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

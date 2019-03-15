@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace ProjectA
 {
-    public partial class GroupProject : Form
+    public partial class GroupEvaluation : Form
     {
-        private static GroupProject l = null;
-        public GroupProject()
+        private static GroupEvaluation l = null;
+        public GroupEvaluation()
         {
             InitializeComponent();
         }
-        public static GroupProject getInstance()
+        public static GroupEvaluation getInstance()
         {
             if (l == null)
             {
-                l = new GroupProject();
+                l = new GroupEvaluation();
                 l.Show();
                 return l;
             }
@@ -32,7 +32,7 @@ namespace ProjectA
             }
         }
         SqlConnection con = new SqlConnection("Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora");
-        public int PrjtID { get; set; }
+        public int EvaluationID { get; set; }
         public int GroupID { get; set; }
         private void GetGroupRecord()
         {
@@ -45,32 +45,42 @@ namespace ProjectA
             dt.Load(rd);
             con.Close();
 
-            gdGroupInfo.DataSource = dt;
+            gdGroup.DataSource = dt;
         }
-        private void GetProjectRecord()
+        private void GetEvaluatioRecord()
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select * from Project", con);
+            SqlCommand cmd = new SqlCommand("Select * from Evaluation", con);
 
             DataTable dt = new DataTable();
-            
+
 
             SqlDataReader rd = cmd.ExecuteReader();
             dt.Load(rd);
             con.Close();
 
-            gdProjectInfo.DataSource = dt;
+            gdEvaluation.DataSource = dt;
         }
-        private void GroupProject_Load(object sender, EventArgs e)
+        private void GroupEvaluation_Load(object sender, EventArgs e)
         {
-            GetProjectRecord();
+            GetEvaluatioRecord();
             GetGroupRecord();
         }
 
-        private void cmdAssignProject_Click(object sender, EventArgs e)
+        private void gdEvaluation_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EvaluationID = Convert.ToInt32(gdEvaluation.SelectedRows[0].Cells[0].Value);
+        }
+
+        private void gdGroup_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GroupID = Convert.ToInt32(gdGroup.SelectedRows[0].Cells[0].Value);
+        }
+
+        private void cmdSave_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd2 = new SqlCommand("Insert into GroupProject Values (@ProjectId,@GroupId,@AssignmentDate)", con);
+            SqlCommand cmd2 = new SqlCommand("Insert into GroupEvaluation Values (@GroupId,@EvaluationId,@ObtainedMarks,@EvaluationDate)", con);
             cmd2.CommandType = CommandType.Text;
 
             cmd2.Parameters.AddWithValue("@GroupId", this.GroupID);
@@ -78,37 +88,30 @@ namespace ProjectA
 
 
 
-            cmd2.Parameters.AddWithValue("@ProjectId", this.PrjtID);
-           
-            
-            cmd2.Parameters.AddWithValue("@AssignmentDate", dateTimePicker1.Value);
+            cmd2.Parameters.AddWithValue("@EvaluationId", this.EvaluationID);
+            cmd2.Parameters.AddWithValue("@ObtainedMarks", Convert.ToInt32(txtMarks.Text));
+
+            cmd2.Parameters.AddWithValue("@EvaluationDate", dtpDate.Value);
             cmd2.ExecuteNonQuery();
             con.Close();
-            MessageBox.Show("Project Assigned to the Group Successfully", "Assignent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Group evaluated  Successfully", "GroupEvaluation", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void gdGroupInfo_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void addStudentToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            GroupID = Convert.ToInt32(gdGroupInfo.SelectedRows[0].Cells[0].Value);
-            txtGroupId.Text = gdGroupInfo.SelectedRows[0].Cells[0].Value.ToString();
-        }
 
-        private void gdProjectInfo_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            PrjtID = Convert.ToInt32(gdProjectInfo.SelectedRows[0].Cells[0].Value);
-            txtProjectId.Text = gdProjectInfo.SelectedRows[0].Cells[0].Value.ToString();
-        }
-
-        private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            HomePage l = HomePage.getInstance();
-            l.Show();
-            this.Hide();
         }
 
         private void seToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Person l = Person.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            HomePage l = HomePage.getInstance();
             l.Show();
             this.Hide();
         }

@@ -11,18 +11,21 @@ using System.Windows.Forms;
 
 namespace ProjectA
 {
-    public partial class GroupProject : Form
+    public partial class ProjectAdvisor : Form
     {
-        private static GroupProject l = null;
-        public GroupProject()
+        private static ProjectAdvisor l = null;
+        public ProjectAdvisor()
         {
             InitializeComponent();
         }
-        public static GroupProject getInstance()
+        SqlConnection con = new SqlConnection("Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora");
+        public int PrjtID { get; set; }
+        public int advisorID { get; set; }
+        public static ProjectAdvisor getInstance()
         {
             if (l == null)
             {
-                l = new GroupProject();
+                l = new ProjectAdvisor();
                 l.Show();
                 return l;
             }
@@ -31,12 +34,9 @@ namespace ProjectA
                 return l;
             }
         }
-        SqlConnection con = new SqlConnection("Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora");
-        public int PrjtID { get; set; }
-        public int GroupID { get; set; }
-        private void GetGroupRecord()
+        private void GetAdvisorRecord()
         {
-            SqlCommand cmd = new SqlCommand("Select * from [Group]", con);
+            SqlCommand cmd = new SqlCommand("Select * from Advisor", con);
 
             DataTable dt = new DataTable();
             con.Open();
@@ -45,7 +45,7 @@ namespace ProjectA
             dt.Load(rd);
             con.Close();
 
-            gdGroupInfo.DataSource = dt;
+            gdAdvisor.DataSource = dt;
         }
         private void GetProjectRecord()
         {
@@ -53,50 +53,58 @@ namespace ProjectA
             SqlCommand cmd = new SqlCommand("Select * from Project", con);
 
             DataTable dt = new DataTable();
-            
+
 
             SqlDataReader rd = cmd.ExecuteReader();
             dt.Load(rd);
             con.Close();
 
-            gdProjectInfo.DataSource = dt;
+            gdProject.DataSource = dt;
         }
-        private void GroupProject_Load(object sender, EventArgs e)
+        private void ProjectAdvisor_Load(object sender, EventArgs e)
         {
             GetProjectRecord();
-            GetGroupRecord();
+            GetAdvisorRecord();
         }
 
-        private void cmdAssignProject_Click(object sender, EventArgs e)
+        private void gdProject_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PrjtID = Convert.ToInt32(gdProject.SelectedRows[0].Cells[0].Value);
+        }
+
+        private void gdAdvisor_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            advisorID = Convert.ToInt32(gdAdvisor.SelectedRows[0].Cells[0].Value);
+        }
+
+        private void cmdAdvisor_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd2 = new SqlCommand("Insert into GroupProject Values (@ProjectId,@GroupId,@AssignmentDate)", con);
+            SqlCommand cmd2 = new SqlCommand("Insert into ProjectAdvisor Values (@AdvisorId,@ProjectId,@AdvisorRole,@AssignmentDate)", con);
             cmd2.CommandType = CommandType.Text;
 
-            cmd2.Parameters.AddWithValue("@GroupId", this.GroupID);
-
-
-
+            cmd2.Parameters.AddWithValue("@AdvisorId", this.advisorID);
 
             cmd2.Parameters.AddWithValue("@ProjectId", this.PrjtID);
-           
-            
-            cmd2.Parameters.AddWithValue("@AssignmentDate", dateTimePicker1.Value);
+
+            int role = 0;
+            if (comboBox1.Text == "Main Advisor")
+            {
+                role = 11;
+            }
+            else if (comboBox1.Text == "Co-Advisror")
+            {
+                role = 12;
+            }
+            else if (comboBox1.Text == "Industry Advisor")
+            {
+                role = 14;
+            }
+            cmd2.Parameters.AddWithValue("@AdvisorRole", role);
+            cmd2.Parameters.AddWithValue("@AssignmentDate", dtpAssignment.Value);
             cmd2.ExecuteNonQuery();
             con.Close();
-            MessageBox.Show("Project Assigned to the Group Successfully", "Assignent", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void gdGroupInfo_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            GroupID = Convert.ToInt32(gdGroupInfo.SelectedRows[0].Cells[0].Value);
-            txtGroupId.Text = gdGroupInfo.SelectedRows[0].Cells[0].Value.ToString();
-        }
-
-        private void gdProjectInfo_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            PrjtID = Convert.ToInt32(gdProjectInfo.SelectedRows[0].Cells[0].Value);
-            txtProjectId.Text = gdProjectInfo.SelectedRows[0].Cells[0].Value.ToString();
+            MessageBox.Show("Advisor Assigned to the Project Successfully", "Assignment", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void homeToolStripMenuItem1_Click(object sender, EventArgs e)

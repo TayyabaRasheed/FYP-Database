@@ -149,5 +149,82 @@ namespace ProjectA
             l.Show();
             this.Hide();
         }
+
+        private void homeToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            HomePage l = HomePage.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void seToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Person l = Person.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void searchStudentsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            StudentsRecord l = StudentsRecord.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void editStudentDataToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            UpdateDeleteStudent l = UpdateDeleteStudent.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void addAdvisorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Advisor l = Advisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void projectAdvisorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProjectAdvisor l = ProjectAdvisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void groupWiseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Evaluation l = Evaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void individualEvaluationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GroupEvaluation l = GroupEvaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void groupStudentsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GroupStudents l = GroupStudents.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void createProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Project l = Project.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void assignGroupProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GroupProject l = GroupProject.getInstance();
+            l.Show();
+            this.Hide();
+        }
     }
 }

@@ -72,6 +72,12 @@
     <Compile Include="Group.Designer.cs">
       <DependentUpon>Group.cs</DependentUpon>
     </Compile>
+    <Compile Include="GroupEvaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupEvaluation.Designer.cs">
+      <DependentUpon>GroupEvaluation.cs</DependentUpon>
+    </Compile>
     <Compile Include="GroupProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,12 +105,24 @@
     <Compile Include="Project.Designer.cs">
       <DependentUpon>Project.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProjectAdvisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectAdvisor.Designer.cs">
+      <DependentUpon>ProjectAdvisor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentsRecord.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentsRecord.Designer.cs">
       <DependentUpon>StudentsRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDeleteAdvisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateDeleteAdvisor.Designer.cs">
+      <DependentUpon>UpdateDeleteAdvisor.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateDeleteStudent.cs">
       <SubType>Form</SubType>
@@ -124,6 +142,9 @@
     <EmbeddedResource Include="Group.resx">
       <DependentUpon>Group.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GroupEvaluation.resx">
+      <DependentUpon>GroupEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GroupProject.resx">
       <DependentUpon>GroupProject.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +157,9 @@
     <EmbeddedResource Include="Project.resx">
       <DependentUpon>Project.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProjectAdvisor.resx">
+      <DependentUpon>ProjectAdvisor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -147,6 +171,9 @@
     </Compile>
     <EmbeddedResource Include="StudentsRecord.resx">
       <DependentUpon>StudentsRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateDeleteAdvisor.resx">
+      <DependentUpon>UpdateDeleteAdvisor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateDeleteStudent.resx">
       <DependentUpon>UpdateDeleteStudent.cs</DependentUpon>

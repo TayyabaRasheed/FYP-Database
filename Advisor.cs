@@ -20,6 +20,7 @@ namespace ProjectA
             InitializeComponent();
             DatabaseConnection.getInstance().ConnectionString = "Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora";
         }
+        SqlConnection con = new SqlConnection("Data Source=TAYYABA-RASHEED;Initial Catalog=ProjectA;User ID=sa;Password=alohamora");
         public static Advisor getInstance()
         {
             if (l == null)
@@ -36,62 +37,69 @@ namespace ProjectA
       
         private void cmdSave_Click(object sender, EventArgs e)
         {
-           // String cm = "select Max(AdvisorId)as maxID from Advisor";
-           // int accounts = 0;
+            // String cm = "select Max(AdvisorId)as maxID from Advisor";
+            // int accounts = 0;
+            con.Open();
+            //  string output = "NULL";
 
-            // cmd.CommandText = "select Max(AccountID)as maxID from Account";
-            // cmd.CommandType = CommandType.Text;
+            SqlCommand cmd3 = new SqlCommand("Insert into Advisor Values (@Id,@Designation,@Salary)", con);
+            cmd3.Parameters.AddWithValue("@Id", 1);
+            cmd3.Parameters.AddWithValue("@Designation", 7);
+            cmd3.Parameters.AddWithValue("@Salary", 10000);
+            cmd3.ExecuteNonQuery();
 
-            //connection.Open();
-           // var reader = DatabaseConnection.getInstance().getData(cm);
-           // int row = DatabaseConnection.getInstance().exectuteQuery(cm);
-           // OleDbDataReader reader = command.ExecuteReader();
-
-            //if (reader.Read())
-            //{
-            //    accounts = Convert.ToInt32(reader["maxID"]) + 1;
-            //}
-
-           // return accounts;
-
-            // return accounts;
-
-
-
-
-            try
+            SqlCommand cmd1 = new SqlCommand("select Max(Id)as maxID from Advisor", con);
+            Int32 s = (Int32)cmd1.ExecuteScalar();
+            // s = Convert.ToInt32(cmd1.ExecuteScalar());
+            if (s < 1)
             {
-                int desg=0;
-                if(comboBox1.Text== "Professor")
+                s = s + 1;
+            }
+            else
+            {
+                s = s + 1;
+            }
+
+            SqlCommand cmd2 = new SqlCommand("Insert into Advisor Values (@Id,@Designation,@Salary)", con);
+            cmd2.CommandType = CommandType.Text;
+
+
+            cmd2.Parameters.AddWithValue("@Id", s);
+            
+              
+                int desg = 0;
+                if (comboBox1.Text == "Professor")
                 {
                     desg = 6;
                 }
-                else if(comboBox1.Text== "Associate Professor")
+                else if (comboBox1.Text == "Associate Professor")
                 {
                     desg = 7;
                 }
-                else if(comboBox1.Text== "Assisstant Professor")
+                else if (comboBox1.Text == "Assisstant Professor")
                 {
                     desg = 8;
                 }
-                else if(comboBox1.Text== "Lecturer")
+                else if (comboBox1.Text == "Lecturer")
                 {
                     desg = 9;
                 }
                 else if (comboBox1.Text == "Industry Professional")
                 {
                     desg = 10;
-                }
-                decimal slry = Convert.ToDecimal(txtSalary.Text);
-                int id = Convert.ToInt32( txtID.Text);
-                String cmd = String.Format("INSERT INTO Advisor(Id,Designation,Salary) values('{0}','{1}','{2}')",id ,desg,slry);
-                int rows = DatabaseConnection.getInstance().exectuteQuery(cmd);
-                MessageBox.Show(String.Format("{0} rows affected", rows));
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            cmd2.Parameters.AddWithValue("@Designation", desg);
+            decimal slry = Convert.ToDecimal(txtSalary.Text);
+            cmd2.Parameters.AddWithValue("@Salary", slry);
+
+            // int id = Convert.ToInt32(txtID.Text);
+            //String cmd = String.Format("INSERT INTO Advisor(Id,Designation,Salary) values('{0}','{1}','{2}')", s, desg, slry);
+            //int rows = DatabaseConnection.getInstance().exectuteQuery(cmd);
+            //MessageBox.Show(String.Format("{0} rows affected", rows));
+            cmd2.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Advisor Added  Successfully", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
 
         }
         private void Advisor_FormClosed(object sender, FormClosedEventArgs e)
@@ -108,7 +116,79 @@ namespace ProjectA
 
         private void groupStudentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            GroupStudents l = GroupStudents.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void homeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            HomePage l = HomePage.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void seToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Person l = Person.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void editStudentDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateDeleteStudent l = UpdateDeleteStudent.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void searchStudentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StudentsRecord l = StudentsRecord.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void addAdvisorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Advisor l = Advisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void projectAdvisorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProjectAdvisor l = ProjectAdvisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void groupWiseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Evaluation l = Evaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void individualEvaluationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GroupEvaluation l = GroupEvaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void createProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Project l = Project.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void assignGroupProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GroupProject l = GroupProject.getInstance();
+            l.Show();
+            this.Hide();
         }
     }
 }

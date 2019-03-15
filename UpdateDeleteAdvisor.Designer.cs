@@ -1,6 +1,6 @@
 ﻿namespace ProjectA
 {
-    partial class GroupStudents
+    partial class UpdateDeleteAdvisor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.dtpAssDate = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dptCreate = new System.Windows.Forms.DateTimePicker();
-            this.assignGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateDeleteAdvisorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assignGroupProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupStudentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -53,88 +46,30 @@
             this.evaluateGroupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupWiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.individualEvaluationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSalary = new System.Windows.Forms.TextBox();
+            this.cmdSave = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.gdAdvisorRecord = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdAdvisorRecord)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // updateDeleteAdvisorToolStripMenuItem
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(479, 81);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(286, 228);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.updateDeleteAdvisorToolStripMenuItem.Name = "updateDeleteAdvisorToolStripMenuItem";
+            this.updateDeleteAdvisorToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.updateDeleteAdvisorToolStripMenuItem.Text = "UpdateDelete Advisor";
+            this.updateDeleteAdvisorToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteAdvisorToolStripMenuItem_Click);
             // 
-            // cmbStatus
+            // createProjectToolStripMenuItem
             // 
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "Active",
-            "In-active"});
-            this.cmbStatus.Location = new System.Drawing.Point(237, 142);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(200, 21);
-            this.cmbStatus.TabIndex = 1;
-            // 
-            // dtpAssDate
-            // 
-            this.dtpAssDate.Location = new System.Drawing.Point(237, 204);
-            this.dtpAssDate.Name = "dtpAssDate";
-            this.dtpAssDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpAssDate.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(112, 150);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Status";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(110, 211);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Assignment Date";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(54, 276);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 33);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Add To Group";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(112, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Created On";
-            // 
-            // dptCreate
-            // 
-            this.dptCreate.Location = new System.Drawing.Point(237, 81);
-            this.dptCreate.Name = "dptCreate";
-            this.dptCreate.Size = new System.Drawing.Size(200, 20);
-            this.dptCreate.TabIndex = 11;
-            // 
-            // assignGroupProjectToolStripMenuItem
-            // 
-            this.assignGroupProjectToolStripMenuItem.Name = "assignGroupProjectToolStripMenuItem";
-            this.assignGroupProjectToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.assignGroupProjectToolStripMenuItem.Text = "Assign Group Project";
-            this.assignGroupProjectToolStripMenuItem.Click += new System.EventHandler(this.assignGroupProjectToolStripMenuItem_Click);
+            this.createProjectToolStripMenuItem.Name = "createProjectToolStripMenuItem";
+            this.createProjectToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.createProjectToolStripMenuItem.Text = "Create Project";
+            this.createProjectToolStripMenuItem.Click += new System.EventHandler(this.createProjectToolStripMenuItem_Click);
             // 
             // projectToolStripMenuItem
             // 
@@ -145,12 +80,12 @@
             this.projectToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.projectToolStripMenuItem.Text = "Project";
             // 
-            // createProjectToolStripMenuItem
+            // assignGroupProjectToolStripMenuItem
             // 
-            this.createProjectToolStripMenuItem.Name = "createProjectToolStripMenuItem";
-            this.createProjectToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.createProjectToolStripMenuItem.Text = "Create Project";
-            this.createProjectToolStripMenuItem.Click += new System.EventHandler(this.createProjectToolStripMenuItem_Click);
+            this.assignGroupProjectToolStripMenuItem.Name = "assignGroupProjectToolStripMenuItem";
+            this.assignGroupProjectToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.assignGroupProjectToolStripMenuItem.Text = "Assign Group Project";
+            this.assignGroupProjectToolStripMenuItem.Click += new System.EventHandler(this.assignGroupProjectToolStripMenuItem_Click);
             // 
             // groupStudentsToolStripMenuItem1
             // 
@@ -178,8 +113,8 @@
             this.projectToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1002, 24);
-            this.menuStrip1.TabIndex = 13;
+            this.menuStrip1.Size = new System.Drawing.Size(817, 24);
+            this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // homeToolStripMenuItem1
@@ -224,7 +159,8 @@
             // 
             this.addInstructorToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addAdvisorToolStripMenuItem,
-            this.projectAdvisorToolStripMenuItem});
+            this.projectAdvisorToolStripMenuItem,
+            this.updateDeleteAdvisorToolStripMenuItem});
             this.addInstructorToolStripMenuItem1.Name = "addInstructorToolStripMenuItem1";
             this.addInstructorToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
             this.addInstructorToolStripMenuItem1.Text = "Instructor";
@@ -232,14 +168,14 @@
             // addAdvisorToolStripMenuItem
             // 
             this.addAdvisorToolStripMenuItem.Name = "addAdvisorToolStripMenuItem";
-            this.addAdvisorToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.addAdvisorToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.addAdvisorToolStripMenuItem.Text = "Add Advisor";
             this.addAdvisorToolStripMenuItem.Click += new System.EventHandler(this.addAdvisorToolStripMenuItem_Click);
             // 
             // projectAdvisorToolStripMenuItem
             // 
             this.projectAdvisorToolStripMenuItem.Name = "projectAdvisorToolStripMenuItem";
-            this.projectAdvisorToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.projectAdvisorToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.projectAdvisorToolStripMenuItem.Text = "Project Advisor";
             this.projectAdvisorToolStripMenuItem.Click += new System.EventHandler(this.projectAdvisorToolStripMenuItem_Click);
             // 
@@ -266,26 +202,91 @@
             this.individualEvaluationToolStripMenuItem.Text = "Groupl Evaluation";
             this.individualEvaluationToolStripMenuItem.Click += new System.EventHandler(this.individualEvaluationToolStripMenuItem_Click);
             // 
-            // GroupStudents
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Professor",
+            "Associate Professor",
+            "Assisstant Professor",
+            "Lecturer",
+            "Industry Professional"});
+            this.comboBox1.Location = new System.Drawing.Point(217, 60);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 35;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(61, 63);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Designation";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(61, 122);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Salary";
+            // 
+            // txtSalary
+            // 
+            this.txtSalary.Location = new System.Drawing.Point(217, 119);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(121, 20);
+            this.txtSalary.TabIndex = 32;
+            // 
+            // cmdSave
+            // 
+            this.cmdSave.Location = new System.Drawing.Point(64, 183);
+            this.cmdSave.Name = "cmdSave";
+            this.cmdSave.Size = new System.Drawing.Size(130, 30);
+            this.cmdSave.TabIndex = 31;
+            this.cmdSave.Text = "Update";
+            this.cmdSave.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(257, 183);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 30);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Delete";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // gdAdvisorRecord
+            // 
+            this.gdAdvisorRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gdAdvisorRecord.Location = new System.Drawing.Point(454, 51);
+            this.gdAdvisorRecord.Name = "gdAdvisorRecord";
+            this.gdAdvisorRecord.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gdAdvisorRecord.Size = new System.Drawing.Size(342, 162);
+            this.gdAdvisorRecord.TabIndex = 37;
+            // 
+            // UpdateDeleteAdvisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 360);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dptCreate);
+            this.ClientSize = new System.Drawing.Size(817, 319);
+            this.Controls.Add(this.gdAdvisorRecord);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dtpAssDate);
-            this.Controls.Add(this.cmbStatus);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "GroupStudents";
-            this.Text = "GroupStudents";
-            this.Load += new System.EventHandler(this.GroupStudents_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Controls.Add(this.txtSalary);
+            this.Controls.Add(this.cmdSave);
+            this.Controls.Add(this.menuStrip1);
+            this.Name = "UpdateDeleteAdvisor";
+            this.Text = "UpdateDeleteAdvisor";
+            this.Load += new System.EventHandler(this.UpdateDeleteAdvisor_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdAdvisorRecord)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,17 +294,10 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox cmbStatus;
-        private System.Windows.Forms.DateTimePicker dtpAssDate;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dptCreate;
-        private System.Windows.Forms.ToolStripMenuItem assignGroupProjectToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateDeleteAdvisorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createProjectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem assignGroupProjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem groupStudentsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem groupToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -318,5 +312,12 @@
         private System.Windows.Forms.ToolStripMenuItem evaluateGroupsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem groupWiseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem individualEvaluationToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtSalary;
+        private System.Windows.Forms.Button cmdSave;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView gdAdvisorRecord;
     }
 }

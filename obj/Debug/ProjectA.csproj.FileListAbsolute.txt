@@ -16,3 +16,6 @@ E:\ProjectA\ProjectA\obj\Debug\ProjectA.Group.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.Project.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.GroupProject.resources
 E:\ProjectA\ProjectA\obj\Debug\ProjectA.Evaluation.resources
+E:\ProjectA\ProjectA\obj\Debug\ProjectA.GroupEvaluation.resources
+E:\ProjectA\ProjectA\obj\Debug\ProjectA.ProjectAdvisor.resources
+E:\ProjectA\ProjectA\obj\Debug\ProjectA.UpdateDeleteAdvisor.resources

@@ -56,9 +56,7 @@ namespace ProjectA
 
         private void addInstructorToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Advisor l = Advisor.getInstance();
-            l.Show();
-            this.Hide();
+            
         }
 
         private void editStudentDataToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,6 +104,34 @@ namespace ProjectA
         private void groupWiseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Evaluation l = Evaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void individualEvaluationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GroupEvaluation l = GroupEvaluation.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void addAdvisorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Advisor l = Advisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void projectAdvisorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProjectAdvisor l = ProjectAdvisor.getInstance();
+            l.Show();
+            this.Hide();
+        }
+
+        private void updateDeleteAdvisorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateDeleteAdvisor l = UpdateDeleteAdvisor.getInstance();
             l.Show();
             this.Hide();
         }
